@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8' />
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5'
+  name='viewport' />
+<meta content='IE=edge' http-equiv='X-UA-Compatible' />
+
+<link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
+<link rel="apple-touch-icon" href="https://feeldreams.github.io/main-icon.png">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<link rel="stylesheet" href="https://htmlku.com/harimu/play/style.css">
+
+<head>
+  <title>HBD Eka</title>
+  <meta name="description" content="Buka bentar yaa.. HTML Feeldream Repl Co">
+</head>
+
+<body>
+
+  <!-- Ganti Audio di sini -->
+  <audio src="Assets/happy-birthday-to-you-lullaby.wav" id="linkmp3" class="sembunyi" loop></audio>
+
+  <div id="bodyblur">
+    <!-- Wallpaper / Background --><img src="Assets/Liyue Harbor and Wangshu Inn backgrounds from the new event.jpeg" id="wallpaper" />
+  </div>
+
+  <div id='Content'>
+
+    <div id="ftAwal">
+      <!-- Stiker Pembuka -->
+      <img src="https://feeldreams.github.io/pandaputih.gif" id="ftoAwal" />
+    </div>
+
+    <div id="loveIn">
+      <!-- Tombol LOVE -->
+      <a href="https://www.feeldream.id/2023/01/script-feeldream.html?m=1#harimu" target="_blank" class='lovein'>
+        <img src="https://rayyscoding.github.io/envelope.png">
+      </a>
+    </div>
+    <p id="ket">Sentuh LOVEnya!</p>
+
+    <div class="kumpulanstiker">
+      <!-- Stiker untuk Konten -->
+      <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker" />
+      <img src="https://feeldreams.github.io/pandapanah.gif" id="fotostiker1" />
+      <img src="https://feeldreams.github.io/pandaputih.gif" id="fotostikerPopup" />
+      <img src="https://feeldreams.github.io/weee.gif" id="fotostikerPopupCon" />
+      <img src="https://feeldreams.github.io/ngumpet.gif" id="fotostikerPopupCan" />
+    </div>
+
+    <div>
+      <div id='pergeseran'>
+
+        <!-- Pesan -->
+        <p><b><img src="Assets/Zhongli.png" /><br>
+            <span>Hai Eka 🤭, apakabar?</span>
+          </b></p>
+
+        <p><b><img src="Assets/Zhongli.png" /><br>
+            <span>Udah tanggal 7 Mei aja, hari ini ada yang ultah ni ye 😜</span>
+          </b></p>
+
+        <p><b><img src="Assets/Zhongli.png" /><br>
+            <span>Kamu yang kemaren bilangin aku tua, sekarang dah tua juga ya 😬</span>
+          </b></p>
+
+        <p><b><img src="Assets/Zhongli.png" /><br>
+            <span class="ft">Kamu kemaren udah ngasih aku pdf begitu, sekarang gantian yak kukasih beginian 🫵😁</span>
+          </b></p>
+          
+        <p><b><img src="Assets/Zhongli.png" /><br>
+            <span> Selamat Ulang Tahun!<br>Moga Panjang Umur<br>dan Sehat Selalu yaa 🥳</span>
+          </b></p>
+      </div>
+    </div>
+
+    <!-- Edit Pesan Akhir di Sini -->
+    <div>
+      <blockquote id='bq'>
+        <p id="teksnim">Happy Level Up Day! 🥳</p>
+        <p id="kalimat"><span id="klganti"><b>Canda yaa wkwk 🤣</b><br><br></span>Intinya semoga di hari bertambahnya<br>usia kamu ini, kamu bisa jadi pribadi yang lebih baik lagi, nggak kebanyakan ngusilin adeknya, terus bisa berbakti sama orang tua. Juga semoga keinginan kamu tergapai semua..🥳 <br><br>Maaf ya, ini aku ucapannya gabisa panjang-panjang nulisnya kek punyamu yang bisa sampe jadi cerpen :v<br><br><span class="ft">Wish You All The Best ✨</span></p>
+      </blockquote>
+    </div>
+
+    <!--<p id="ketgeser">Klik untuk Geser!</p>-->
+    <div id="Tombol">
+      <a onClick="multifungsi()">
+        <b id="tmbl">Geser &#128073;</b>
+      </a>
+    </div>
+
+  </div>
+
+  <script src="https://htmlku.com/harimu/play/script.js"></script>
+  <script>
+    function bqmuncul() {
+      if (poinjwb == 1) {
+        katakata = kalimat.innerHTML; kalimat.innerHTML = "";
+      } else {
+        klganti.innerHTML = "Udah ah segitu aja 🤣<br><br>"; katakata = kalimat.innerHTML; kalimat.innerHTML = "";
+      }
+      Content.style = "opacity:1;margin-top:7vh"; fotostiker.style = "display:none"; pergeseran.style = "display:none"; Tombol.style = ""; bq.style = "position:relative;opacity:1;visibility:visible;margin-top:20px;transform: scale(1);";
+      setTimeout(kalimatakhir, 200); ftganti = 0; fthilang();
+    }
+
+    tompositif = "Mau";
+    tomnegatif = "Gamau";
+    async function aksibalas() {
+      var { isConfirmed: prtanya } = await swals.fire({
+        title: 'Mau Kado Gak Nih? 🤭',
+        imageUrl: '' + fotostikerPopup.src, showCancelButton: true, confirmButtonText: '' + tompositif, cancelButtonText: '' + tomnegatif, cancelButtonColor: '#FF0000',
+      });
+      if (prtanya) {
+        await swalst.fire({
+          title: 'Tapi Boong! 🤣',
+          html: 'Gajadi ngasih kado ah 😜',
+          imageUrl: '' + fotostikerPopupCon.src,
+        });
+        poinjwb = 1;
+      } else {
+        await swals.fire({
+          title: 'Yaaahh!',
+          html: 'Yaudah kalo gamau 😜',
+          imageUrl: '' + fotostikerPopupCan.src,
+        });
+        poinjwb = 2;
+      }
+      bqmuncul();
+    }
+  </script>
+</body>
+
+</html>
